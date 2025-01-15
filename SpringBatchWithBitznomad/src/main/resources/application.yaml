@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: SpringBatchWithBitznomad
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springbatch
+    username: bitznomad
+    password: 123123a
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop  # Tắt tính năng tự động tạo schema của Hibernate
+    show-sql: true
+    generate-ddl: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  batch:
+    jdbc:
+      initialize-schema: always  # Tự động tạo bảng cho Spring Batch
+    job:
+      enabled: false  # Không tự động chạy job khi khởi động ứng dụng
+logging:
+  level:
+    root: info
+    org.springframework.batch: debug  # Log chi tiết cho Spring Batch
