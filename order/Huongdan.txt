@@ -1,0 +1,1 @@
+Để gọi (trigger) một batch job trong Spring Batch, bạn có thể sử dụng nhiều cách khác nhau tùy thuộc vào ngữ cảnh của ứng dụng.

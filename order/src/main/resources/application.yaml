@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: order
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springbatch
+    username: bitznomad
+    password: 123123a
+    driver-class-name: org.postgresql.Driver
+  jpa:
+      hibernate:
+        ddl-auto: update  # T?t t�nh n?ng t? ??ng t?o schema c?a Hibernate
+      show-sql: true
+      generate-ddl: true
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+  batch:
+      jdbc:
+        initialize-schema: always  # T? ??ng t?o b?ng cho Spring Batch
+      job:
+        enabled: false  # Kh�ng t? ??ng ch?y job khi kh?i ??ng ?ng d?ng
+  logging:
+    level:
+      root: info
+      org.springframework.batch: debug  # Log chi ti?t cho Spring Batch
+
+  input:
+    file:
+      path: orders1.csv
